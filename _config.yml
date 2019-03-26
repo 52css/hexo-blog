@@ -1,12 +1,3 @@
-# @Author: weijie
-# @Date:   2017-09-20T10:24:18+08:00
-# @Email:  weijie@rongyi.com
-# @Filename: _config.yml
-# @Last modified by:   weijie
-# @Last modified time: 2017-09-23T09:32:50+08:00
-
-
-
 # Hexo Configuration
 ## Docs: https://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
@@ -86,9 +77,6 @@ theme: next
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-- type: git
+  type: git
   repository: git@github.com:52css/52css.github.io.git
   branch: master
-# - type: git
-#   repository: https://git.coding.net/52css/52css.coding.me.git
-#   branch: master
