@@ -253,8 +253,10 @@ tags: [js,multi,cascade,checkbox]
         const rtv = []
         arr.forEach((item) => {
           if (item.parentId === parentId) {
-            if (item[children] && item[children].length) {
-              item[children] = loop(item[id])
+            const childrenList = loop(arr, item[id], id, children)
+
+            if (childrenList && childrenList.length) {
+              item[children] = childrenList
             }
             rtv.push(item)
           }
@@ -263,10 +265,10 @@ tags: [js,multi,cascade,checkbox]
       }
     }
 
-    function Public() {
+    function Event() {
       this.handlers = {};
     }
-    Public.prototype = {
+    Event.prototype = {
         // 订阅事件
         on: function(eventType, handler){
             var self = this;
@@ -319,7 +321,7 @@ tags: [js,multi,cascade,checkbox]
 
         // bind event
         flatArr.forEach((item, index) => {
-          var event = new Public();
+          var event = new Event();
 
           item.$event = event
 
